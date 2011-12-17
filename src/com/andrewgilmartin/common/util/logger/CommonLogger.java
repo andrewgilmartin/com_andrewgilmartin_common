@@ -3,6 +3,9 @@ package com.andrewgilmartin.common.util.logger;
 import java.text.MessageFormat;
 import org.apache.log4j.Level;
 
+/**
+ * A logger that builds upon Log4j and MessageFormat.
+ */
 public final class CommonLogger {
 
     private org.apache.log4j.Logger logger;

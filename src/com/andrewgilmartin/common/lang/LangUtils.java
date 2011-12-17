@@ -7,6 +7,10 @@ import java.lang.reflect.Method;
 
 public class LangUtils {
 
+    /**
+     * Use relection to invoke a close() method on the given object. Log
+     * any exceptions to the given logger.
+     */
     public static void close(Object o, CommonLogger logger) {
         try {
             Method m = o.getClass().getMethod("close");
@@ -33,7 +37,11 @@ public class LangUtils {
         }
     }
 
-    public static <T> T getFieldValue(Field field, Object object) throws IllegalAccessException {
+    /**
+     * Return the field's value. Ensures that the field is accessible before
+     * accessing.
+     */
+    public static <T> T get(Field field, Object object) throws IllegalAccessException {
         boolean accessible = field.isAccessible();
         try {
             field.setAccessible(true); // make sure we can read the value
@@ -44,6 +52,10 @@ public class LangUtils {
         }
     }
 
+    /**
+     * Invoke the method and return the result. Ensures that the method is
+     * accessible before accessing.
+     */
     public static <T> T invoke(Method method, Object object, Object... parameters) throws IllegalAccessException, InvocationTargetException {
         boolean accessible = method.isAccessible();
         try {

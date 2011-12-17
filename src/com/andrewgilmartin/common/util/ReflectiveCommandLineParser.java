@@ -199,7 +199,7 @@ public class ReflectiveCommandLineParser {
             }
             try {
                 Field this$0 = instance.getClass().getDeclaredField("this$0");
-                instance = LangUtils.getFieldValue(this$0, instance);
+                instance = LangUtils.get(this$0, instance);
             }
             catch (NoSuchFieldException e) {
                 instance = null;
