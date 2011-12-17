@@ -7,6 +7,7 @@ package com.andrewgilmartin.examples;
  */
 
 import com.andrewgilmartin.common.util.ReflectiveCommandLineParser;
+import com.andrewgilmartin.common.util.logger.CommonLogger;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,6 +29,8 @@ import java.util.regex.Pattern;
  * @see ReflectiveCommandLineParser
  */
 public class ListFiles implements Runnable {
+
+    private static final CommonLogger logger = CommonLogger.getLogger(ListFiles.class);
 
     private PrintStream out = System.out;
     private boolean detail = false;
@@ -88,7 +91,7 @@ public class ListFiles implements Runnable {
             }
         }
         catch (IOException e) {
-            e.printStackTrace(System.err);
+            logger.error(e);
         }
         finally {
             out.close();
