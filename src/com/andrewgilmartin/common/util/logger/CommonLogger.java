@@ -1,6 +1,6 @@
 package com.andrewgilmartin.common.util.logger;
 
-import java.text.MessageFormat;
+import com.andrewgilmartin.common.text.SimpleMessageFormat;
 import org.apache.log4j.Level;
 
 /**
@@ -133,7 +133,8 @@ public final class CommonLogger {
     }
 
     protected String format(String messageFormat, Object[] messageParameters) {
-        String message = MessageFormat.format(messageFormat, messageParameters);
+        // String message = MessageFormat.format(messageFormat, messageParameters);
+        String message = SimpleMessageFormat.format(messageFormat,messageParameters);
         return message;
     }
 }

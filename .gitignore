@@ -2,3 +2,5 @@
 tmp/**/* 
 build/**/*
 dist/**/*
+/build/
+/dist/
