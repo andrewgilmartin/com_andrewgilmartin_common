@@ -1,6 +1,2 @@
 .DS_Store
-tmp/**/* 
-build/**/*
-dist/**/*
-/build/
-/dist/
+/target/
