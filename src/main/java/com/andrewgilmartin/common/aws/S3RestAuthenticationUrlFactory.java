@@ -41,7 +41,7 @@ public class S3RestAuthenticationUrlFactory {
         String path = "/" + uriEncode(bucket) + "/" + uriEncode(item);
         String expires = Long.toString(System.currentTimeMillis() / 1000 + secondsToLive);
         String url = "https://s3.amazonaws.com" + path
-                + "?AWSAccessKeyId=" + awsAccessKeyId
+                + "?AWSAccessKeyId=" + uriEncode(awsAccessKeyId)
                 + "&Expires=" + expires
                 + "&Signature=" + base64Encode(
                         sha1Encrypt(

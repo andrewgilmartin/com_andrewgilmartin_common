@@ -1,4 +1,4 @@
-package com.andrewgilmartin.common.util;
+package com.andrewgilmartin.common.cli;
 
 /**
  * ReflectiveCommandLineParser by Andrew Gilmartin (andrew@andrewgilmartin.com)
