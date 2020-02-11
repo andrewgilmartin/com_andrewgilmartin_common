@@ -1,4 +1,4 @@
-package org.crossref.common.util;
+package com.andrewgilmartin.common.text;
 
 import java.io.File;
 import java.io.FileReader;
